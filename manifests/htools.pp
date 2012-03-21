@@ -1,7 +1,7 @@
-class ganeti_tutorial::htools {
-    require ganeti_tutorial::params
+class ganeti::htools {
+    require ganeti::params
 
-    $htools_version  = "${ganeti_tutorial::params::htools_version}"
+    $htools_version  = "${ganeti::params::htools_version}"
 
     package {
         "ghc6":                 ensure  => installed;
@@ -11,7 +11,7 @@ class ganeti_tutorial::htools {
         "libghc6-curl-dev":     ensure  => installed;
     }
 
-    ganeti_tutorial::unpack {
+    ganeti::unpack {
         "htools":
             source  => "/root/src/ganeti-htools-${htools_version}.tar.gz",
             cwd     => "/root/src",

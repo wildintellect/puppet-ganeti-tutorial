@@ -1,6 +1,6 @@
-class ganeti_tutorial::networking {
+class ganeti::networking {
     file { "/etc/network/interfaces":
         ensure  => present,
-        content => template("ganeti_tutorial/interfaces.erb"),
+        content => template("ganeti/interfaces.erb"),
     }
 }

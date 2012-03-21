@@ -1,8 +1,8 @@
-class ganeti_tutorial::instance_image {
-    require ganeti_tutorial::params
+class ganeti::instance_image {
+    require ganeti::params
 
-    $image_version  = "${ganeti_tutorial::params::image_version}"
-    $debian_version = "${ganeti_tutorial::params::debian_version}"
+    $image_version  = "${ganeti::params::image_version}"
+    $debian_version = "${ganeti::params::debian_version}"
 
     package {
         #"qemu-utils":       ensure => installed;
@@ -14,15 +14,15 @@ class ganeti_tutorial::instance_image {
         "/etc/default/ganeti-instance-image":
             ensure  => present,
             require => Exec["install-instance-image"],
-            content => template("ganeti_tutorial/instance-image/defaults.erb");
+            content => template("ganeti/instance-image/defaults.erb");
         "/etc/ganeti/instance-image/variants.list":
             ensure  => present,
             require => Exec["install-instance-image"],
-            source  => "${ganeti_tutorial::params::files}/instance-image/variants.list";
+            source  => "${ganeti::params::files}/instance-image/variants.list";
         "/etc/ganeti/instance-image/variants/debian-lenny.conf":
             ensure  => present,
             require => Exec["install-instance-image"],
-            source  => "${ganeti_tutorial::params::files}/instance-image/debian-lenny.conf";
+            source  => "${ganeti::params::files}/instance-image/debian-lenny.conf";
         "/etc/ganeti/instance-image/hooks/interfaces":
             mode    => 755,
             require => Exec["install-instance-image"];
@@ -30,10 +30,10 @@ class ganeti_tutorial::instance_image {
             ensure  => present,
             mode    => 755,
             require => Exec["install-instance-image"],
-            source  => "${ganeti_tutorial::params::files}/instance-image/hooks/zz_no-net";
+            source  => "${ganeti::params::files}/instance-image/hooks/zz_no-net";
     }
 
-    ganeti_tutorial::wget {
+    ganeti::wget {
         "debian-boot":
             require     => Exec["install-instance-image"],
             source      => "http://staff.osuosl.org/~ramereth/ganeti-tutorial/debian-${debian_version}-${hardwaremodel}-boot.dump",
@@ -44,7 +44,7 @@ class ganeti_tutorial::instance_image {
             destination => "/var/cache/ganeti-instance-image/debian-${debian_version}-${hardwaremodel}-root.dump";
     }
 
-    ganeti_tutorial::unpack {
+    ganeti::unpack {
         "instance-image":
             source      => "/root/src/ganeti-instance-image-${image_version}.tar.gz",
             cwd         => "/root/src/",

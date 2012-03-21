@@ -1,4 +1,4 @@
-class ganeti_tutorial::drbd {
+class ganeti::drbd {
     package {
         "drbd8-utils":
             ensure  => installed,
@@ -7,7 +7,7 @@ class ganeti_tutorial::drbd {
     file {
         "/etc/modules":
             ensure  => present,
-            source  => "/etc/puppet/modules/ganeti_tutorial/files/modules",
+            source  => "/etc/puppet/modules/ganeti/files/modules",
     }
 
     service {

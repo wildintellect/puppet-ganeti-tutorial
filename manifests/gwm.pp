@@ -1,8 +1,8 @@
-class ganeti_tutorial::gwm {
-    include ganeti_tutorial::puppet
-    require ganeti_tutorial::params
+class ganeti::gwm {
+    include ganeti::puppet
+    require ganeti::params
 
-    $gwm_version = "${ganeti_tutorial::params::gwm_version}"
+    $gwm_version = "${ganeti::params::gwm_version}"
 
     package {
         "python-pip":   ensure => "installed";
@@ -17,7 +17,7 @@ class ganeti_tutorial::gwm {
             provider    => "pip";
     }
 
-    ganeti_tutorial::unpack {
+    ganeti::unpack {
         "gwm":
             source  => "/root/src/ganeti-webmgr.${gwm_version}.tar.gz",
             cwd     => "/root/",

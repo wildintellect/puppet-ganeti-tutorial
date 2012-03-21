@@ -1,5 +1,5 @@
-class ganeti_tutorial::puppet {
-    $deb_dir = "/etc/puppet/modules/ganeti_tutorial/files/deb"
+class ganeti::puppet {
+    $deb_dir = "/etc/puppet/modules/ganeti/files/deb"
     package {
         "puppet-common":
             ensure      => latest,

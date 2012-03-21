@@ -1,11 +1,11 @@
 # Ganeti Tutorial
 
-class ganeti_tutorial {
-    require ganeti_tutorial::params
+class ganeti {
+    require ganeti::params
 
-    include ganeti_tutorial::install_deps
-    include ganeti_tutorial::hosts
-    include ganeti_tutorial::drbd
+    include ganeti::install_deps
+    include ganeti::hosts
+    include ganeti::drbd
 
     file {
         "/root/.ssh":
@@ -17,11 +17,11 @@ class ganeti_tutorial {
             ensure  => directory;
         "/root/puppet":
             ensure  => link,
-            target  => "/etc/puppet/modules/ganeti_tutorial";
+            target  => "/etc/puppet/modules/ganeti";
         "/var/lib/ganeti/rapi/users":
             ensure  => "present",
             mode    => 640,
             require => File["/var/lib/ganeti/rapi/"],
-            source  => "${ganeti_tutorial::params::files}/rapi-users";
+            source  => "${ganeti::params::files}/rapi-users";
     }
 }

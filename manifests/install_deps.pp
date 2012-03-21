@@ -1,4 +1,4 @@
-class ganeti_tutorial::install_deps {
+class ganeti::install_deps {
     package {
         # Ganeti deps
         "lvm2":             ensure => installed;
@@ -15,15 +15,13 @@ class ganeti_tutorial::install_deps {
         "socat":            ensure => installed;
         "python-paramiko":  ensure => installed;
         # Misc
-        "vim":              ensure => installed;
-        "screen":           ensure => installed;
         "git":              ensure => installed;
     }
 
     file {
         "/root/src":
             ensure  => present,
-            source  => "/etc/puppet/modules/ganeti_tutorial/files/src/",
+            source  => "/etc/puppet/modules/ganeti/files/src/",
             recurse => true;
     }
 }

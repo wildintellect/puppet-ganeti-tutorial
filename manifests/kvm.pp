@@ -1,4 +1,4 @@
-class ganeti_tutorial::kvm {
+class ganeti::kvm {
     package {
         "kvm":  ensure => installed;
     }
