@@ -1,24 +1,18 @@
-# Puppet Configs for a Ganeti Tutorial
+# Puppet Configs for a Ganeti Cluster
 
-This module is *not* intended for _production_ use and only used as an
-_instructional tool_. It will setup two ganeti nodes with the basics to install
+This module is intended as a guide to _production_ use for the install of 
 [Ganeti](http://code.google.com/p/ganeti/), [Ganeti Instance
 Image](http://code.osuosl.org/projects/ganeti-image), and [Ganeti Web
-Manager](http://code.osuosl.org/projects/ganeti-webmgr).
-
-This module will be used for [Hands on Virtualization with
-Ganeti](http://www.oscon.com/oscon2011/public/schedule/detail/18544) at [OSCON
-2011](http://oscon.com).
+Manager](http://code.osuosl.org/projects/ganeti-webmgr) via Puppet on a cluster of Ubuntu servers.
 
 # Requirements
 
-This assumes that you have two to three Debian Squeeze VMs setup inside of
-VirtualBox. Images can be downloaded from
-[here](http://ftp.osuosl.org/pub/osl/ganeti-tutorial/).
+This assumes you have 2 or more debian/ubuntu servers with Puppet configured.
 
 # Copyright
+
+Based on puppet-ganeti-tutorial by Lance Albertson, 2011
 
 This work is licensed under a [Creative Commons Attribution-Share Alike 3.0
 United States License](http://creativecommons.org/licenses/by-sa/3.0/us/).
 
-vi: set tw=80 ft=markdown :
