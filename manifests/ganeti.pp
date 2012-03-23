@@ -1,4 +1,4 @@
-class ganeti::ganeti::install {
+class ganeti::install {
  #   require ganeti::params
 
  #   $ganeti_version = "${ganeti::params::ganeti_version}"
