@@ -6,7 +6,7 @@ class ganeti {
     include ganeti::hosts
     include ganeti::drbd
     include ganeti::kvm
-    inlcude ganeti::ganeti::install
+    inlcude ganeti::ganeti
 
     file {
         "/var/lib/ganeti":
