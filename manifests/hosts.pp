@@ -1,36 +1,25 @@
 class ganeti::hosts {
     host {
-        "ganeti.example.org":
+        "ganeti.des.ucdavis.edu":
             ensure          => present,
             host_aliases    => "ganeti",
-            ip              => "33.33.33.10";
-        "node1.example.org":
+            ip              => "169.237.167.49";
+        "ice1.des.ucdavis.edu":
             ensure          => present,
-            host_aliases    => "node1",
-            ip              => "33.33.33.11";
-        "node2.example.org":
+            host_aliases    => "ice1",
+            ip              => "169.237.167.49";
+        "ice2.des.ucdavis.edu":
             ensure          => present,
-            host_aliases    => "node2",
-            ip              => "33.33.33.12";
-        "node3.example.org":
+            host_aliases    => "ice2",
+            ip              => "169.237.167.50";
+	  "ice1drbd.des.ucdavis.edu":
             ensure          => present,
-            host_aliases    => "node3",
-            ip              => "33.33.33.13";
-        "instance1.example.org":
+            host_aliases    => "ice1drbd",
+            ip              => "192.168.167.49";
+        "ice2drbd.des.ucdavis.edu":
             ensure          => present,
-            host_aliases    => "instance1",
-            ip              => "33.33.33.31";
-        "instance2.example.org":
-            ensure          => present,
-            host_aliases    => "instance2",
-            ip              => "33.33.33.32";
-        "instance3.example.org":
-            ensure          => present,
-            host_aliases    => "instance3",
-            ip              => "33.33.33.33";
-        "instance4.example.org":
-            ensure          => present,
-            host_aliases    => "instance4",
-            ip              => "33.33.33.34";
-    }
+            host_aliases    => "ice2",
+            ip              => "192.168.167.50";
+            }
+
 }

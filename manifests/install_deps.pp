@@ -18,10 +18,10 @@ class ganeti::install_deps {
         "git":              ensure => installed;
     }
 
-    file {
-        "/root/src":
-            ensure  => present,
-            source  => "/etc/puppet/modules/ganeti/files/src/",
-            recurse => true;
-    }
+    #file {
+    #    "/root/src":
+    #        ensure  => present,
+    #        source  => "/etc/puppet/modules/ganeti/files/src/",
+    #        recurse => true;
+    #}
 }

@@ -1,7 +1,7 @@
 # Ganeti Installation
 
 class ganeti {
-    require ganeti::params
+    #require ganeti::params
     include ganeti::install_deps
     include ganeti::hosts
     include ganeti::drbd
