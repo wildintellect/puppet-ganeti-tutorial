@@ -5,6 +5,8 @@ class ganeti {
     include ganeti::install_deps
     include ganeti::hosts
     include ganeti::drbd
+    include ganeti::kvm
+    inlcude ganeti::ganeti::install
 
     file {
         "/var/lib/ganeti":

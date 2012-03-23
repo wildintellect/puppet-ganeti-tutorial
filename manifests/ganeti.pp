@@ -1,5 +1,5 @@
 class ganeti::ganeti::install {
-    require ganeti::params
+ #   require ganeti::params
 
  #   $ganeti_version = "${ganeti::params::ganeti_version}"
 
@@ -13,11 +13,11 @@ class ganeti::ganeti::install {
     }
 }
 
-class ganeti::ganeti::initialize inherits ganeti::ganeti::install {
-    exec {
-        "initialize-ganeti":
-            command => "/root/puppet/files/scripts/initialize-ganeti",
-            creates => "/var/lib/ganeti/config.data",
-            require => Exec["install-ganeti"],
-    }
-}
+#class ganeti::ganeti::initialize inherits ganeti::ganeti::install {
+#    exec {
+#        "initialize-ganeti":
+#            command => "/root/puppet/files/scripts/initialize-ganeti",
+#            creates => "/var/lib/ganeti/config.data",
+#            require => Exec["install-ganeti"],
+#    }
+#}
