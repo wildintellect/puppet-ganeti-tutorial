@@ -7,7 +7,7 @@ class ganeti::drbd {
     file {
         "/etc/modules":
             ensure  => present,
-            source  => "/etc/puppet/modules/ganeti/files/modules",
+            source  => "puppet:///modules/ganeti/files/modules",
     }
 
     service {
