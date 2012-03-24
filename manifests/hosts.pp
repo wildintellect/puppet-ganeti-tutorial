@@ -18,7 +18,7 @@ class ganeti::hosts {
             ip              => "192.168.167.49";
         "ice2drbd.des.ucdavis.edu":
             ensure          => present,
-            host_aliases    => "ice2",
+            host_aliases    => "ice2drbd",
             ip              => "192.168.167.50";
             }
 
