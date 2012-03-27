@@ -3,7 +3,7 @@ class ganeti::hosts {
         "ganeti.des.ucdavis.edu":
             ensure          => present,
             host_aliases    => "ganeti",
-            ip              => "169.237.167.49";
+            ip              => "169.237.167.61";
         "ice1.des.ucdavis.edu":
             ensure          => present,
             host_aliases    => "ice1",
