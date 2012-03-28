@@ -1,6 +1,6 @@
 class ganeti::hosts {
-    host {
+    #host {
         #moved to different module
-            }
+    #        }
 
 }
