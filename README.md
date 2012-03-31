@@ -10,6 +10,7 @@ Manager](http://code.osuosl.org/projects/ganeti-webmgr) via Puppet on a cluster 
 This assumes you have 2 or more debian/ubuntu servers with Puppet configured.
 
 # Copyright
+Alex Mandel 2012
 
 Based on puppet-ganeti-tutorial by Lance Albertson, 2011
 
