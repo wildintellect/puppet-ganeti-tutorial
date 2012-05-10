@@ -18,6 +18,7 @@ class ganeti {
             ensure  => "present",
             mode    => 640,
             require => File["/var/lib/ganeti/rapi/"],
-            source  => "${ganeti::params::files}/rapi-users";
+            #source  => "${ganeti::params::files}/rapi-users";
+		source  => "puppet:///modules/ganeti/rapi-users";
     }
 }
